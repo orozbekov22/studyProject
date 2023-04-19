@@ -6,6 +6,8 @@ import com.example.rentcarweb.service.CarService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class CarServiceImpl implements CarService {
@@ -18,5 +20,15 @@ public class CarServiceImpl implements CarService {
     @Override
     public Car findById(Long id) {
         return carRepo.findById(id).get();
+    }
+
+    @Override
+    public List<Car> findAll() {
+        return carRepo.findAll();
+    }
+
+    @Override
+    public void removeById(Long id) {
+        carRepo.deleteById(id);
     }
 }

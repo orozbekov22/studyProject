@@ -1,6 +1,7 @@
 package com.example.rentcarweb.model;
 
 import com.example.rentcarweb.enums.*;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,7 +24,10 @@ public class Car {
     private Long         id;
 
     private String       model;
+
+    @JsonFormat(pattern = "yyyy")
     private LocalDate    mnfYear;
+
     private String       description;
     private Integer      gasPer100;
     private Integer      engineVolume;
@@ -34,5 +38,5 @@ public class Car {
     private Transmission transmission;
 
     private Boolean      isAvailable;
-    private BigDecimal   price;   //OneToMany
+    private BigDecimal   price;
 }

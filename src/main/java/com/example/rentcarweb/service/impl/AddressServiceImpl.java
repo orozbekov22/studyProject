@@ -6,6 +6,8 @@ import com.example.rentcarweb.service.AddressService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class AddressServiceImpl implements AddressService {
@@ -18,5 +20,15 @@ public class AddressServiceImpl implements AddressService {
     @Override
     public Address findById(Long id) {
         return addressRepo.findById(id).get();
+    }
+
+    @Override
+    public List<Address> findAll() {
+        return addressRepo.findAll();
+    }
+
+    @Override
+    public void removeById(Long id) {
+        addressRepo.deleteById(id);
     }
 }

@@ -1,5 +1,6 @@
 package com.example.rentcarweb.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -26,8 +27,11 @@ public class Order {
     private String        clientPhone;
     private String        clientEmail;
 
+    @JsonFormat(pattern = "dd-MM-yyyy HH:mm:ss")
     private LocalDateTime dateTimeFrom;
+    @JsonFormat(pattern = "dd-MM-yyyy HH:mm:ss")
     private LocalDateTime dateTimeTo;
+
     private Boolean       babySeat;
     private Boolean       withDriver;
     private BigDecimal    priceBeforeDiscount;

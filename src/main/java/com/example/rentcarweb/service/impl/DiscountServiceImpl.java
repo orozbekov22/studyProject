@@ -6,6 +6,8 @@ import com.example.rentcarweb.service.DiscountService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class DiscountServiceImpl implements DiscountService {
@@ -18,5 +20,15 @@ public class DiscountServiceImpl implements DiscountService {
     @Override
     public Discount findById(Long id) {
         return discountRepo.findById(id).get();
+    }
+
+    @Override
+    public List<Discount> findAll() {
+        return discountRepo.findAll();
+    }
+
+    @Override
+    public void removeById(Long id) {
+        discountRepo.deleteById(id);
     }
 }

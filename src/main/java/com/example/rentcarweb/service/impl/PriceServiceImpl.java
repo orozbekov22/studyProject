@@ -6,7 +6,7 @@ import com.example.rentcarweb.service.PriceService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -20,5 +20,15 @@ public class PriceServiceImpl implements PriceService {
     @Override
     public Price findById(Long id) {
         return priceRepo.findById(id).get();
+    }
+
+    @Override
+    public List<Price> findAll() {
+        return priceRepo.findAll();
+    }
+
+    @Override
+    public void removeById(Long id) {
+        priceRepo.deleteById(id);
     }
 }
