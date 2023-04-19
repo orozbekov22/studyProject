@@ -1,13 +1,13 @@
-package com.example.rentcarwebapp;
+package com.example.rentcarweb;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class RentCarWebAppApplication {
+public class RentCarWebApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(RentCarWebAppApplication.class, args);
+        SpringApplication.run(RentCarWebApplication.class, args);
         //new project
     }
 
