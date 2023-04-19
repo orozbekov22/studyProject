@@ -16,7 +16,7 @@ import lombok.Setter;
 public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-     Long   id;
+    private Long   id;
 
     private String city;
     private String street;

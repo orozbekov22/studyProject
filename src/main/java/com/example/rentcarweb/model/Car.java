@@ -20,7 +20,7 @@ import java.time.LocalDate;
 public class Car {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-     Long         id;
+    private Long         id;
 
     private String       model;
     private LocalDate    mnfYear;
