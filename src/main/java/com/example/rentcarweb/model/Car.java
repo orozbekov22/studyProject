@@ -1,9 +1,6 @@
 package com.example.rentcarweb.model;
 
-import com.example.rentcarweb.enums.Category;
-import com.example.rentcarweb.enums.ColorCar;
-import com.example.rentcarweb.enums.EngineType;
-import com.example.rentcarweb.enums.Transmission;
+import com.example.rentcarweb.enums.*;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,7 +12,7 @@ import java.time.LocalDate;
 
 
 @Entity
-@Table(schema = "tb_car")
+@Table(name = "tb_car")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -23,7 +20,7 @@ import java.time.LocalDate;
 public class Car {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long         id;
+     Long         id;
 
     private String       model;
     private LocalDate    mnfYear;

@@ -12,7 +12,7 @@ import java.util.List;
 
 
 @Entity
-@Table(schema = "tb_order")
+@Table(name = "tb_order")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -26,10 +26,6 @@ public class Order {
     private String        clientPhone;
     private String        clientEmail;
 
-
-    private Address       getAddress;
-    private Address       returnAddress;
-
     private LocalDateTime dateTimeFrom;
     private LocalDateTime dateTimeTo;
     private Boolean       babySeat;
@@ -40,5 +36,17 @@ public class Order {
     @OneToMany(cascade = CascadeType.ALL)
         @JoinColumn(name = "car_id", referencedColumnName = "id")
     private List<Car>           cars;
+
+    @OneToMany
+    @JoinColumn(name = "address_id", referencedColumnName = "id")
+    private List<Address> address;
+
+
+      /*@OneToOne(cascade = CascadeType.ALL)
+        @JoinColumn(name = "address_id", referencedColumnName = "id")
+    private Address       getAddress;
+    @OneToOne(cascade = CascadeType.ALL)
+        @JoinColumn(name = "address_id", referencedColumnName = "id")
+    private Address       returnAddress;*/
 
 }

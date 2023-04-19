@@ -11,7 +11,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Entity
-@Table(schema = "tb_price")
+@Table(name = "tb_price")
 @Getter
 @Setter
 @NoArgsConstructor
