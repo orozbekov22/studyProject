@@ -19,7 +19,8 @@ public class PriceServiceImpl implements PriceService {
 
     @Override
     public Price findById(Long id) {
-        return priceRepo.findById(id).get();
+        return priceRepo.findById(id).orElseThrow( () ->
+                new RuntimeException("Price not found - " + id));
     }
 
     @Override

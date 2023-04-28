@@ -16,10 +16,14 @@ import lombok.Setter;
 public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long   id;
+    private Long id;
 
     private String city;
     private String street;
     private String buildingNum;
+
+//    @ManyToOne(cascade = CascadeType.ALL)
+//        @JoinColumn(name = "order_id", referencedColumnName = "id")
+//    private Order order;
 
 }

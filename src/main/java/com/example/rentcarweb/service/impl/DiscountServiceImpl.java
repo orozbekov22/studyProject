@@ -19,7 +19,8 @@ public class DiscountServiceImpl implements DiscountService {
 
     @Override
     public Discount findById(Long id) {
-        return discountRepo.findById(id).get();
+        return discountRepo.findById(id).orElseThrow(()->
+                new RuntimeException("Discount not found - " + id));
     }
 
     @Override

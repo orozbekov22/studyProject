@@ -18,9 +18,9 @@ import java.time.LocalDateTime;
 public class Discount {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long          id;
+    private Long id;
 
-    private Double        discount;
+    private Double discount;
 
     @JsonFormat(pattern = "dd-MM-yyyy HH:mm:ss")
     private LocalDateTime startDate;
@@ -28,7 +28,7 @@ public class Discount {
     private LocalDateTime endDate;
 
     @ManyToOne
-        @JoinColumn(name = "car_id", referencedColumnName = "id")
-    private Car           car;
+    @JoinColumn(name = "car_id", referencedColumnName = "id")
+    private Car car;
 
 }

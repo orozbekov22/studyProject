@@ -19,16 +19,16 @@ import java.time.LocalDate;
 public class Price {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long       id;
+    private Long id;
 
     private BigDecimal price;
     @JsonFormat(pattern = "dd-MM-yyyy")
-    private LocalDate  startDate;
+    private LocalDate startDate;
 
     @JsonFormat(pattern = "dd-MM-yyyy")
-    private LocalDate  endDate;
+    private LocalDate endDate;
 
     @ManyToOne
-        @JoinColumn(name = "car_id", referencedColumnName = "id")
-    private Car        car;
+    @JoinColumn(name = "car_id", referencedColumnName = "id")
+    private Car car;
 }

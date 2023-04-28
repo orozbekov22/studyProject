@@ -21,22 +21,26 @@ import java.time.LocalDate;
 public class Car {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long         id;
+    private Long id;
 
-    private String       model;
+    private String model;
 
     @JsonFormat(pattern = "yyyy")
-    private LocalDate    mnfYear;
+    private LocalDate mnfYear;
 
-    private String       description;
-    private Integer      gasPer100;
-    private Integer      engineVolume;
+    private String description;
+    private Integer gasPer100;
+    private Integer engineVolume;
 
-    private ColorCar     color;
-    private EngineType   engineType;
-    private Category     category;
+    @Enumerated(EnumType.STRING)
+    private ColorCar color;
+    @Enumerated(EnumType.STRING)
+    private EngineType engineType;
+    @Enumerated(EnumType.STRING)
+    private Category category;
+    @Enumerated(EnumType.STRING)
     private Transmission transmission;
 
-    private Boolean      isAvailable;
-    private BigDecimal   price;
+    private Boolean isAvailable;
+    private BigDecimal price;
 }

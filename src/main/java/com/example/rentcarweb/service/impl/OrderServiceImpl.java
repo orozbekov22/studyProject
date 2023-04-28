@@ -17,6 +17,7 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public Order findById(Long id) {
-        return orderRepo.findById(id).get();
+        return orderRepo.findById(id).orElseThrow(() ->
+                new RuntimeException("Order not found - " + id));
     }
 }

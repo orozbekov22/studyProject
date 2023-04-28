@@ -1,28 +1,17 @@
-package com.example.rentcarweb.model;
+package com.example.rentcarweb.model.dto;
 
+
+import com.example.rentcarweb.model.Address;
 import com.fasterxml.jackson.annotation.JsonFormat;
-import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import lombok.Data;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.util.List;
 
-
-@Entity
-@Table(name = "tb_order")
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-public class Order {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
+@Data
+public class OrderDto {
     private String clientName;
     private String clientPhone;
     private String clientEmail;
@@ -32,8 +21,6 @@ public class Order {
     @JsonFormat(pattern = "dd-MM-yyyy HH:mm:ss")
     private LocalDateTime dateTimeTo;
 
-    private Boolean babySeat;
-    private Boolean withDriver;
     private BigDecimal priceBeforeDiscount;
     private BigDecimal priceWithDiscount;
 
@@ -45,12 +32,4 @@ public class Order {
     @JoinColumn(name = "return_address", referencedColumnName = "id")
     private Address returnAddress;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "car_id", referencedColumnName = "id")
-    private List<Car> cars;
-
-
-    /*@OneToMany
-    @JoinColumn(name = "address_id", referencedColumnName = "id")
-    private List<Address> address;*/
 }
